@@ -1,0 +1,25 @@
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: Install fontconfig and openjdk-17-jre
+    apt:
+      name:
+        - fontconfig
+        - openjdk-17-jre
+      state: present
+
+  - name: download jenkins key
+    ansible.builtin.get_url:
+      url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+      dest: /usr/share/keyrings/jenkins-keyring.asc
+
+  - name: Add Jenkins repo
+    ansible.builtin.apt_repository:
+      repo: deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/
+      state: present
+
+  - name: Install the Jenkins
+    ansible.builtin.apt:
+      name: jenkins
+      state: present
