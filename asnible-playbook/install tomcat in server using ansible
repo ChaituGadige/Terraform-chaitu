@@ -32,7 +32,11 @@
 
 
 
-
+  # - name: Insert a line after a specific pattern
+  #   lineinfile:
+  #     path: /opt/tomcat/conf/tomcat-users.xml
+  #     line: <role rolename="manager-gui"/>  <user username="admin" password="password>" roles="manager-gui"/>
+  #     insertafter: "^Pattern to match"
 
 
 
