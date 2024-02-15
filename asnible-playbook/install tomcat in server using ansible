@@ -1,0 +1,21 @@
+- hosts: all
+  become: yes
+
+  - name: Install Java
+    apt:
+      name: openjdk-11-jdk
+      state: present
+
+  - name: Creating Apache Tomcat home directory.
+    command: mkdir /opt/tomcat
+
+  - name: Download Tomcat
+    get_url:
+      url: https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.85/bin/apache-tomcat-9.0.85.tar.gz
+      dest: /opt/
+
+  - name: Extract tar.gz
+    shell: tar -xzvf /opt/apache-tomcat-9.0.85.tar.gz -C /opt/tomcat --strip-components=1
+
+  - name: Start Tomcat
+    shell: /opt/tomcat/bin/startup.sh
