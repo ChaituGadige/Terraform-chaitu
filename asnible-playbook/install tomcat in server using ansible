@@ -26,3 +26,25 @@
 
   - name: Start Tomcat
     shell: /opt/tomcat/bin/startup.sh
+
+
+
+
+
+
+
+
+
+
+#   - name: Replace a line
+#     lineinfile:
+#       path: /opt/tomcat/webapps/manager/META-INF/context.xml
+#       regexp: '<CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor" sameSiteCookies="strict">
+#       line: '<!-- <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor" sameSiteCookies="stri>
+#  - name: Replace a line
+#    lineinfile:
+#       path: /opt/tomcat/webapps/manager/META-INF/context.xml
+#       regexp: '<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:>
+#       line: '<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0>
+
+
