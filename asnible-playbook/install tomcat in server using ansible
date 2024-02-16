@@ -27,28 +27,24 @@
   - name: Start Tomcat
     shell: /opt/tomcat/bin/startup.sh
 
+  - name: Replace a line
+    lineinfile:
+      path: /opt/tomcat/conf/server.xml
+      regexp: <Connector port="8080" protocol="HTTP/1.1"
+      line: <Connector port="8081" protocol="HTTP/1.1"
+
+  - name: Stop Tomcat
+    shell: /opt/tomcat/bin/shutdown.sh
+
+  - name: Start Tomcat
+    shell: /opt/tomcat/bin/startup.sh
+
+# nano /opt/tomcat/webapps/manager/META-INF/context.xml - comment one file
+# nano /opt/tomcat/conf/tomcat-users.xml -add <role rolename="manager-gui"/>
+#  <user username="tomcat" password="tomcat" roles="manager-gui"/>
 
 
 
 
-
-  # - name: Insert a line after a specific pattern
-  #   lineinfile:
-  #     path: /opt/tomcat/conf/tomcat-users.xml
-  #     line: <role rolename="manager-gui"/>  <user username="admin" password="password>" roles="manager-gui"/>
-  #     insertafter: "^Pattern to match"
-
-
-
-#   - name: Replace a line
-#     lineinfile:
-#       path: /opt/tomcat/webapps/manager/META-INF/context.xml
-#       regexp: '<CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor" sameSiteCookies="strict">
-#       line: '<!-- <CookieProcessor className="org.apache.tomcat.util.http.Rfc6265CookieProcessor" sameSiteCookies="stri>
-#  - name: Replace a line
-#    lineinfile:
-#       path: /opt/tomcat/webapps/manager/META-INF/context.xml
-#       regexp: '<Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:>
-#       line: '<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve" allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0>
 
 
