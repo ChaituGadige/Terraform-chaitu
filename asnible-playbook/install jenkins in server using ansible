@@ -4,9 +4,7 @@
   tasks:
   - name: Install fontconfig and openjdk-17-jre
     apt:
-      name:
-        - fontconfig
-        - openjdk-17-jre
+      name: openjdk-17-jre
       state: present
 
   - name: download jenkins key
