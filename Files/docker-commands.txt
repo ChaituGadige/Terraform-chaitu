@@ -1,0 +1,18 @@
+docker pull image_name (to the image from hub/repo)
+docker commit container_id repo_name/image_name (to convert container into image)
+docker push repo_name/image_name ( to push the image to hub)
+
+
+command to create container = docker run -itd --name nameofserver -p a:b image
+where -p : port number 
+       a : your wish port number
+       b : port number of the application (ex-apache2:80 , tomcat:8080)
+
+docker ps    (to check the list of running containers)
+docker ps -a ( to check the list of  stopped container)
+docker exec -it container_id /bin/bash (to login to the container)
+docker stop container_id (to stop the container)
+docker rm container_id (to delete the container)
+docker rm -f container_id ( to forcefully delte the container)
+docker rmi image_name ( to remove the image)
+   
