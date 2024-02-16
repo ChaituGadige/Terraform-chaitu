@@ -23,3 +23,11 @@
     ansible.builtin.apt:
       name: jenkins
       state: present
+
+  - name: Register the Key
+    shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+    register: password
+
+  - name: Print the Registered Key
+    debug: 
+      msg: "{{ password.stdout}}"
