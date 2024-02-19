@@ -46,3 +46,8 @@ docker commit container_id repo_name/image_name
 docker push repo_name/image_name
 ```
 - repo_name/image_name: Name of the image to push to the repository.
+
+### To create an image using Dockerfile
+```
+docker build -t own_image_name:v1 .
+```
