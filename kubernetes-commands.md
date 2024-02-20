@@ -33,5 +33,12 @@ kubectl expose pod podname --type=NodePort --port=1234 --target-port=80/8080 --n
 ```
 kubectl expose rs podname --type=NodePort --port=1234 --target-port=80/8080 --name=srvname
 ```
+```
+kubectl get service
+```
+```
+kubectl delete service srvname
+```
+
 ## Replica commands
 
