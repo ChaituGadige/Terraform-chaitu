@@ -7,6 +7,7 @@ eksctl create cluster --name k8scluster --region us-east-1 --zones us-east-1a,us
 ```
 aws eks update-kubeconfig --name dev --region us-east-1
 ```
+## PODS command
 ```
 kubectl delete pod podname
 ```
