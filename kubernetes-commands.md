@@ -31,7 +31,7 @@ kubectl expose pod podname --type=NodePort --port=1234 --target-port=80/8080 --n
 ```
 #### for replica set
 ```
-kubectl expose rs podname --type=NodePort --port=1234 --target-port=80/8080 --name=srvname
+kubectl expose rs rsname --type=NodePort --port=1234 --target-port=80/8080 --name=srvname
 ```
 ```
 kubectl get service
@@ -41,4 +41,6 @@ kubectl delete service srvname
 ```
 
 ## Replica commands
-
+```
+kubectl create -f filename.yaml
+```
