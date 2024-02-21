@@ -1,0 +1,19 @@
+- hosts: all
+  become: yes
+
+  tasks:
+
+  - name: Install Java
+    apt:
+      name: openjdk-11-jdk
+      state: present
+
+  - name: Install Maven using Ansible
+    apt:
+      name: maven
+      state: present
+
+  - name: Change to the directory
+    command: mvn package
+    args:
+      chdir: ./my-app
