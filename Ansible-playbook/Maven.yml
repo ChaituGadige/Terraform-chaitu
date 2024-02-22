@@ -13,7 +13,10 @@
       name: maven
       state: present
 
+  - name: Clone the repository
+    shell: git clone https://github.com/VigneshRamkumar11167/maven-project.git
+
   - name: Change to the directory
     command: mvn package
     args:
-      chdir: ./my-app
+      chdir: ./maven-project
